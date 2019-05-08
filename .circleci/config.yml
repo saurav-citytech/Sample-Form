@@ -2,6 +2,8 @@ version: 2.1
 jobs:
   build:
     working_directory: ~/code
+    docker:
+      - image: buildpack-deps:trusty
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
