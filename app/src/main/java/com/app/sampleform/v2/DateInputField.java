@@ -90,7 +90,7 @@ public class DateInputField extends InputField implements DatePickerDialog.OnDat
     }
 
     @Override
-    public void hideError() {
+    public void hideWarning() {
         textInputLayout.setError(null);
     }
 }

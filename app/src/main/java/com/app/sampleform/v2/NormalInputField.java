@@ -92,7 +92,7 @@ public class NormalInputField extends InputField {
     }
 
     @Override
-    public void hideError() {
+    public void hideWarning() {
         textInputLayout.setError(null);
         textInputLayout.setErrorEnabled(false);
     }

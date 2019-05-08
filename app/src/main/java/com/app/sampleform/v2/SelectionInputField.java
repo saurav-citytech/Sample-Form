@@ -94,7 +94,7 @@ public class SelectionInputField extends InputField implements OptionPickListene
     }
 
     @Override
-    public void hideError() {
+    public void hideWarning() {
         textInputLayout.setError(null);
     }
 }

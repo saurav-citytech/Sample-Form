@@ -28,5 +28,5 @@ public abstract class InputField extends LinearLayout {
 
     public abstract void showEmptyWarning();
 
-    public abstract void hideError();
+    public abstract void hideWarning();
 }

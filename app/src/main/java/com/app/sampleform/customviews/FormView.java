@@ -9,14 +9,12 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.app.sampleform.R;
 import com.app.sampleform.model.FormField;
 import com.app.sampleform.model.Section;
 import com.app.sampleform.model.SectionField;
-import com.app.sampleform.model.SubmitData;
 import com.app.sampleform.v2.DualInputField;
 import com.app.sampleform.v2.Utils;
 import com.app.sampleform.v2.ValueChangeListener;
@@ -25,7 +23,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public abstract class FormView extends ScrollView implements ValueChangeListener {
 
@@ -36,6 +33,8 @@ public abstract class FormView extends ScrollView implements ValueChangeListener
     List<SectionField> sectionFields;
     @BindView(R.id.rl_form)
     RelativeLayout rlForm;
+
+
 
     public FormView(Context context) {
         super(context);
@@ -58,6 +57,7 @@ public abstract class FormView extends ScrollView implements ValueChangeListener
         initViews();
     }
 
+    public abstract List<Section> getSections();
 
 
     private void initViews() {
@@ -69,7 +69,7 @@ public abstract class FormView extends ScrollView implements ValueChangeListener
     }
 
 
-    public abstract List<Section> getSections();
+
 
     private void populateFormFields(List<SectionField> sectionFields) {
         for (SectionField sectionField : sectionFields) {
@@ -112,7 +112,7 @@ public abstract class FormView extends ScrollView implements ValueChangeListener
                         formField.getFieldLayout().showEmptyWarning();
                         return;
                     } else {
-                        formField.getFieldLayout().hideError();
+                        formField.getFieldLayout().hideWarning();
                     }
                 }
             }
